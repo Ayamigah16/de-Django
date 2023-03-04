@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp import views
-
+from class_views.views import NewView, TutorCreate  # importing the class based view 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # paths for myapp
     path("hello/", views.hello),
     path('index/', views.index),
     path('show/', views.show),
@@ -29,5 +30,9 @@ urlpatterns = [
     path('gcookie', views.getcookie),   
     path('csv', views.getfile), #adding csv url
     path('pdf', views.getpdf),    # adding pdf url
-    path('mail', views.mail)
+    path('mail', views.mail),
+    
+    # path for classviews app
+    path('about/', NewView.as_view()),   # as_view() method is used
+    path("tutor/", TutorCreate.as_view(), name = 'TutorCreate')
 ]

@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from myapp import views
-from class_views.views import NewView, TutorCreate  # importing the class based view 
+from class_views.views import NewView, TutorCreate, TutorUpdate, TutorList, TutorDetail  # importing the class based view 
+
+app_name = 'class_views'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +35,7 @@ urlpatterns = [
     path('mail', views.mail),
     
     # path for classviews app
+    path('class-views/', include('class_views.urls', namespace='class_views')),
     path('about/', NewView.as_view()),   # as_view() method is used
-    path("tutor/", TutorCreate.as_view(), name = 'TutorCreate')
+    
 ]

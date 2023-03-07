@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tutor Detail</title>
+</head>
+<body>
+	<h1>{{ object }}</h1>
+	<p><strong>Name:</strong> {{ object.name }}</p>
+	<p><strong>Email:</strong> {{ object.email }}</p>
+	<p><strong>Phone:</strong> {{ object.phone }}</p>
+
+    <td><button><a href = '/tutor/{{object.pk}}/delete' class = 'class="btn text-secondary px-0'> Delete  
+    </a></button></td>  
+  
+    <td><button><a href = '/tutor/{{object.pk}}/update' class = 'class="btn text-secondary px-0'> Update  
+  </a></button></td>  
+</body>
+</html>

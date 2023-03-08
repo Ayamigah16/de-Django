@@ -20,7 +20,7 @@
                 <td>Last Name</td>  
                 <td>Mobile</td>  
                 <td>Email</td>  
-                    <a href="{% url 'class_views:TutorList' %}" class="btn btn-outline-success">  
+                    <a href="{% url 'class_views:tutor-create' %}" class="btn btn-outline-success">  
                         <i class="fas fa-plus"></i> Add New  
                     </a>  
                 </td>  
@@ -36,10 +36,10 @@
                     <td>{{object.email }} </td>  
       
                 <td>  
-                <td><button><a href = '/{{object.pk}}/delete' class = 'class="btn text-secondary px-0'> Delete  
+                <td><button><a href="{% url 'class_views:tutor-delete' pk=object.pk %}"  class = 'class="btn text-secondary px-0'> Delete  
                 </a></button></td>  
       
-                <td><button><a href = '/{{object.pk}}/update' class = 'class="btn text-secondary px-0'> Update  
+                <td><button><a  href="{% url 'class_views:tutor-update' pk=object.pk %}" class = 'class="btn text-secondary px-0'> Update  
                 </a></button></td>  
         {% endfor %}  
       

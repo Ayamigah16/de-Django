@@ -7,15 +7,20 @@
 	<title>Tutor Detail</title>
 </head>
 <body>
-	<h1>{{ object }}</h1>
-	<p><strong>Name:</strong> {{ object.name }}</p>
-	<p><strong>Email:</strong> {{ object.email }}</p>
-	<p><strong>Phone:</strong> {{ object.phone }}</p>
+	 <!-- delete.html -->
+  <h1>Delete Tutor</h1>
 
-    <td><button><a href = '/tutor/{{object.pk}}/delete' class = 'class="btn text-secondary px-0'> Delete  
-    </a></button></td>  
-  
-    <td><button><a href = '/tutor/{{object.pk}}/update' class = 'class="btn text-secondary px-0'> Update  
-  </a></button></td>  
+  <p>Are you sure you want to delete this tutor?</p>
+  <p><strong>Name:</strong> {{ tutor.name }}</p>
+  <p><strong>Subject:</strong> {{ tutor.subject }}</p>
+  <p><strong>Email:</strong> {{ tutor.email }}</p>
+  <p><strong>Phone:</strong> {{ tutor.phone }}</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'tutor-list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+
 </body>
 </html>

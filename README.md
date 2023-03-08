@@ -7,3 +7,4 @@ Below are what I've treated so far:
 - ModelForms, Django Forms and Form validation
 - File upload
 - Django Database Connectivity with MySQL
+- Class Based Views

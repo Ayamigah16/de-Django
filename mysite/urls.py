@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from myapp import views
-from class_views.views import NewView, TutorCreate, TutorUpdate, TutorList, TutorDetail  # importing the class based view 
-
-app_name = 'class_views'
-
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # paths for myapp
@@ -35,7 +32,5 @@ urlpatterns = [
     path('mail', views.mail),
     
     # path for classviews app
-    path('class-views/', include('class_views.urls', namespace='class_views')),
-    path('about/', NewView.as_view()),   # as_view() method is used
-    
+    path('', include(('class_views.urls'), namespace='class_views'))
 ]
